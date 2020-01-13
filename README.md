@@ -1,0 +1,2 @@
+# basidot
+my arch dotfiles
