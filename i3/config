@@ -214,6 +214,7 @@ bindsym $Mod+r mode "resize"
 
 # Opens Polybar
 exec --no-startup-id polybar PolybarTop -r
+exec --no-startup-id polybar PolybarBot -r
 
 # Opens tilda in background (shift + < for a fast terminal)
 exec --no-startup-id tilda
@@ -277,7 +278,7 @@ bindsym XF86LaunchA exec scrot '/home/basile/Immagini/Screenshot'
 #hide_edge_borders both
 for_window [class="^.*"] border pixel 0
 gaps inner 10 
-gaps outer 10
+gaps outer 6
 
 bindsym $Mod+z		gaps outer current plus 5
 bindsym $Mod+Shift+z	gaps outer current minus 5
