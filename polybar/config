@@ -1,4 +1,4 @@
-;==========================================================
+;=========================================================
 ;
 ;
 ;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
@@ -18,14 +18,103 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
-primary = #ffb52a
+;primary = #ffb52a
+;secondary = #e60053
+;alert = #bd2c40
+primary = FFF
+secondary = #B2535B
+alert = #B2535B
+
+;------------;
+;   TOPBAR   ;
+;------------;
+
+[bar/PolybarTop]
+line-size = 3
+line-color = #f00
+
+border-size = 4
+border-color = #00000000
+
+;------------;
+; DIMENSIONS ;
+;------------;
+
+width = 100%
+height = 30
+offset-y = 0
+offset-x = 0
+
+border-top-size = 3
+border-bottom-size = 3
+border-right-size = 7
+border-left-size = 7
+
+;----------;
+; LOCATION ;
+;----------;
+
+bottom = false
+
+;-------;
+; FONTS ;
+;-------;
+
+font-0 = scientifica:style=Regular:size=11:antialias=true;3"
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=8;3"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;3"
+font-3 = "Font Awesome 5 Brands:pixelsize=8;3"
+
+;--------;
+; COLORS ;
+;--------;
+
+background = 0
+background-alt = #555
+foreground = #dfdfdf
+foreground-alt = #555
+primary = #E1D4AE
 secondary = #e60053
-alert = #bd2c40
+alert = #B2535B
+
+;---------------;
+; MISCELLANEOUS ;
+;---------------;
+
+radius = 0.0
+fixed-center = true
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+modules-left = powermenu pulseaudio backlight-acpi
+modules-center = xwindow
+modules-right = wlan battery date
+
+tray-position = none
+tray-padding =2 
+;tray-transparent = true
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
 
 [bar/topbar]
 width = 100%
@@ -49,6 +138,75 @@ module-margin-right = 3
 modules-left = i3
 modules-center = date 
 modules-right = powermenu
+
+;------------;
+; BOTBAR    ;
+;------------;
+
+[bar/PolybarBot]
+line-size = 3
+line-color = #f00
+
+border-size = 4
+border-color = #00000000
+
+;------------;
+; DIMENSIONS ;
+;------------;
+
+width = 100%
+height = 40
+offset-y = 0
+offset-x = 0
+
+border-top-size = 0
+border-bottom-size = 10
+border-right-size = 10
+border-left-size = 10
+
+;----------;
+; LOCATION ;
+;----------;
+
+bottom = true
+
+;-------;
+; FONTS ;
+;-------;
+
+font-0 = scientifica:style=Regular:size=11:antialias=true;3
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=11;3"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=11;3"
+font-3 = "Font Awesome 5 Brands:pixelsize=11;3"
+font-4 = "Scientifica:size=11;3"
+
+;--------;
+; COLORS ;
+;--------;
+
+background = 0
+background-alt = #555
+foreground = #dfdfdf
+foreground-alt = #555
+primary = #E1D4AE
+secondary = #e60053
+alert = #B2535B
+
+;---------------;
+; MISCELLANEOUS ;
+;---------------;
+
+radius = 0.0
+fixed-center = true
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+modules-left = i3
+modules-center = spotify
+modules-right = filesystem memory cpu temperature
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -100,9 +258,25 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+;---------;
+; MODULES ;
+;---------;
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = "  "
+format = <label>
+exec = python $HOME/.config/polybar/spotify.py
+format-underline = 
+format-foreground = ${colors.primary}
+
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+;label = %title:0:30:...%
+format-foreground = ${colors.primary}
+label = %title%
+label-maxlen = 80
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -130,59 +304,50 @@ label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
-label-occupied = %index%
-label-occupied-padding = 2
-
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
-
-; Separator in between workspaces
-; label-separator = |
-
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
-index-sort = true
+index-sort = false
 wrapping-scroll = false
 
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;;
+ws-icon-6 = 7;;
+ws-icon-7 = 8;;
+ws-icon-8 = 9;;
+ws-icon-default = 
+
 ; Only show workspaces on the same output as the bar
-pin-workspaces = true
+;pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #FFF
+label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused = %name%
+label-focused-foreground = ${colors.secondary}
+label-focused-underline = ${colors.secondary}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+label-unfocused = %name%
 label-unfocused-padding = 2
+label-unfocused-foreground = ${colors.primary}
+label-unfocused-underline =
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
+label-visible = %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
@@ -207,11 +372,12 @@ label-song-ellipsis = true
 type = internal/xbacklight
 
 format = <label> <bar>
-label = BL
+label = %percentage%%
+label-foreground = ${colors.primary}
 
-bar-width = 10
+bar-width = 15
 bar-indicator = |
-bar-indicator-foreground = #fff
+bar-indicator-foreground = ${colors.primary}
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
@@ -219,19 +385,22 @@ bar-fill-foreground = #9f78e1
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
+enable-scroll = true
 
 [module/backlight-acpi]
 inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
+type = internal/xbacklight
+card = nvidia_backlight 
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+;format-prefix = " "
+format-prefix = "  CPU "
+format-prefix-foreground = ${colors.primary}
+format-underline = 
 label = %percentage:2%%
+label-foreground = ${colors.primary}
 
 [module/memory]
 type = internal/memory
@@ -305,7 +474,7 @@ label-volume-foreground = ${root.foreground}
 label-muted = 🔇 muted
 label-muted-foreground = #666
 
-bar-volume-width = 10
+bar-volume-width = 15
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
 bar-volume-foreground-2 = #55aa55
