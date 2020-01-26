@@ -241,17 +241,17 @@ default_floating_border pixel 0
 
 # Shortcuts for frequently used applications
 
-mode "$applauncher" {
+mode "App Launcher" {
 #	bindsym o exec opera; mode "default"
 	bindsym v exec code; mode "default"
 	bindsym c exec chromium; mode "default"
-#	bindsym t exec thunar; mode "default"
+	bindsym t exec thunar; mode "default"
 
 	bindsym Escape mode "default"
 	bindsym Return mode "default"
 }
 
-bindsym $Mod+a mode "$applauncher"
+bindsym $Mod+a mode "App Launcher"
 
 # Cmd+tab passa al workspace successivo
 bindsym $Mod+Tab exec --no-startup-id rofi -show window
@@ -277,8 +277,8 @@ bindsym XF86LaunchA exec scrot '/home/basile/Immagini/Screenshot'
 #Needed for i3-gaps
 #hide_edge_borders both
 for_window [class="^.*"] border pixel 0
-gaps inner 10 
-gaps outer 6
+gaps inner 10
+gaps outer 0
 
 bindsym $Mod+z		gaps outer current plus 5
 bindsym $Mod+Shift+z	gaps outer current minus 5
