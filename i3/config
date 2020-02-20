@@ -213,14 +213,16 @@ bindsym $Mod+r mode "resize"
 #	###PERSONAL ADDITIONS###
 
 # Opens Polybar
-exec --no-startup-id polybar PolybarTop -r
-exec --no-startup-id polybar PolybarBot -r
+exec --no-startup-id polybar TopLeft -r
+exec --no-startup-id polybar TopCenter -r
+exec --no-startup-id polybar TopRight -r 
+
 
 # Opens tilda in background (shift + < for a fast terminal)
 exec --no-startup-id tilda
 
 # max size is before second flickering bar
-floating_maximum_size 1130 x 812
+floating_maximum_size 1262 x 659
 #floating_minimum_size 1000 x 740
 
 #self explanatory (default is left)
@@ -278,20 +280,17 @@ bindsym XF86LaunchA exec scrot '/home/basile/Immagini/Screenshot'
 #Needed for i3-gaps
 #hide_edge_borders both
 for_window [class="^.*"] border pixel 0
-gaps inner 10
+gaps inner 9
 gaps outer 0
 
-bindsym $Mod+z		gaps outer current plus 5
-bindsym $Mod+Shift+z	gaps outer current minus 5
-
-border_radius 4
+border_radius 5
 
 # Color settings #
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
+set $bg-color 	         #212121
+set $inactive-bg-color   #353535
+set $text-color          #eeffff
+set $inactive-text-color #eeffff
+set $urgent-bg-color     #ffcb6b
 
 #                       border              background         text                 indicator
 client.focused          $bg-color           $bg-color          $text-color          #424242
@@ -302,6 +301,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 hide_edge_borders both
 
 for_window [class="scrcpy"] floating enable
+for_window [class="Terminator"] floating enable
 
 assign [class="Terminator"] $ws1
 assign [class="Chromium"] $ws2

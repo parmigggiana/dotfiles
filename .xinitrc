@@ -42,7 +42,7 @@ xrandr --dpi 96x113
 setxkbmap it
 
 # Set Wallpaper and theme
-wal -R 
+feh --bg-fill .wallpaper.png &
 
 # Bluelight
 redshift & 
