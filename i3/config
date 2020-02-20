@@ -216,13 +216,13 @@ bindsym $Mod+r mode "resize"
 exec --no-startup-id polybar TopLeft -r
 exec --no-startup-id polybar TopCenter -r
 exec --no-startup-id polybar TopRight -r 
-
+exec --no-startup-id polybar i3menu -r
 
 # Opens tilda in background (shift + < for a fast terminal)
 exec --no-startup-id tilda
 
 # max size is before second flickering bar
-floating_maximum_size 1262 x 659
+floating_maximum_size 1262 x 739
 #floating_minimum_size 1000 x 740
 
 #self explanatory (default is left)
