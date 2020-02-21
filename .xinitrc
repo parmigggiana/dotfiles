@@ -33,7 +33,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 # Adjust keyboard typematic delay and rate
-xset r rate 225 35
+xset r rate 255 35
 
 # Start Xorg server at this DPI
 xrandr --dpi 96x113
@@ -47,16 +47,11 @@ feh --bg-fill .wallpaper.png &
 # Bluelight filter
 redshift & 
 
-# Service for transparent windows
+# Service for transparency and shadows
 picom &
 
 # Start i3wm
 exec i3
 
-# Start polybar
-#exec --no-startup-id polybar PolybarTop -r &
-#exec --no-startup-id polybar PolybarBot -r &
-
 #xclock &
-#terminator &
-#exec terminator -geometry 80x66+0+0 -name login
+#exec alacritty -geometry 80x66+0+0 -name login
