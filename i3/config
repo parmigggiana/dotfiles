@@ -269,7 +269,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 
 # Screenshot with F3 #
-bindsym XF86LaunchA exec scrot "/home/basile/Immagini/Screenshot.png"
+bindsym XF86LaunchA exec scrot "$HOME/Immagini/Screenshot.png"
 
 ###########################################
 ###			 		###
@@ -313,8 +313,8 @@ assign [class="Spotify"] $ws10
 #exec --no-startup-id xset dpms 600
 
 # Autolock in standby #
-exec --no-startup-id xidlehook --not-when-audio --timer normal 600 '/home/basile/.lock.sh'
-bindsym $Mod+m exec bash /home/basile/.lock.sh
+#exec --no-startup-id xidlehook --not-when-audio --timer normal 600 '$HOME/.lock.sh'
+bindsym $Mod+m exec bash $HOME/.lock.sh
 
 # Assign Opera to second workspace and terminal to first #
 #assing [class="Terminator"] 1
