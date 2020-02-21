@@ -269,7 +269,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 
 # Screenshot with F3 #
-bindsym XF86LaunchA exec scrot '/home/basile/Immagini/Screenshot'
+bindsym XF86LaunchA exec scrot "/home/basile/Immagini/Screenshot.png"
 
 ###########################################
 ###			 		###
