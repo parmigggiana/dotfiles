@@ -1,2 +1,4 @@
 # basidot
-my arch dotfiles
+
+![Preview of the theme](https://github.com/parmigggiana/basidot/blob/master/Screenshot)
+
