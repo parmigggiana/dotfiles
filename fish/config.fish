@@ -6,7 +6,7 @@ set -g theme_title_display_path no
 set -g theme_title_display_user no
 set SHELL /usr/bin/fish
 
-
+# Start X11 at startup 
 #if status is-interactive
 #    if test -z "$DISPLAY" -a $XDG_VTNR = 1
 #        exec startx -- -keeptty
