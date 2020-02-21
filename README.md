@@ -1,7 +1,7 @@
 # basidot
 
-![First screenshot](https://github.com/parmigggiana/basidot/blob/master/Screenshot.png)
-![Second screenshot](https://github.com/parmigggiana/basidot/blob/master/Screenshot2.png)
+![Screenshot preview](https://github.com/parmigggiana/basidot/blob/master/Screenshot.png)
+
 
 Details: 
 
