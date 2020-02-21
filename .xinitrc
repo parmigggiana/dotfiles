@@ -44,7 +44,7 @@ setxkbmap it
 # Set Wallpaper and theme
 feh --bg-fill .wallpaper.png &
 
-# Bluelight
+# Bluelight filter
 redshift & 
 
 # Service for transparent windows
