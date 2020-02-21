@@ -18,7 +18,7 @@
 
 [colors]
 background = ${xrdb:background} 
-background-alt = $xerb:color8}
+background-alt = ${xrdb:color8}
 foreground = ${xrdb:foreground}
 foreground-alt = ${xrdb:color15}
 red = ${xrdb:color1}
@@ -34,10 +34,10 @@ secondary = ${colors.purple}
 alert = ${colors.yellow}
 
 ;------------;
-;   TOPBAR   ;
+;  TOPLEFT   ;
 ;------------;
 
-[bar/PolybarTop]
+[bar/TopLeft]
 line-size = 0
 line-color = 
 
@@ -48,15 +48,15 @@ border-color = #00000000
 ; DIMENSIONS ;
 ;------------;
 
-width = 100%
-height = 30
+width = 26.76%
+height = 35
 offset-y = 0
 offset-x = 0
 
-border-top-size = 4
-border-bottom-size = -1
-border-right-size = 6
-border-left-size = 5
+border-top-size = 8
+border-bottom-size = 0
+border-right-size = 0
+border-left-size = 8
 
 ;----------;
 ; LOCATION ;
@@ -69,17 +69,72 @@ bottom = false
 ;-------;
 
 font-0 = "SFNS Display:style=Regular:size=12:antialias=true;2"
-font-1 = "NotoSans Nerd Font:style=Regular:size=12;1"
-;font-2 = "Segoe UI Symbol:style=Regular:size=12;2"
-;font-3 = "Source Code Pro:style=Regular:size=12;2"
-;font-4 = "Quivira:style=Regular:size=13;2"
-;font-5 = "IEC symbols Unicode:style=Light:size:12;3"
+font-1 = "NotoSans Nerd Font:style=Regular:size=11;2"
 
 ;---------------;
 ; MISCELLANEOUS ;
 ;---------------;
 
-radius = 7.0
+radius = 6.0
+background = ${colors.background}
+fixed-center = false
+padding-left = 2
+padding-right = 2
+
+module-margin-left = 0
+module-margin-right = 0
+
+modules-left = powermenu 
+modules-right = i3 
+
+wm-restack = i3
+override-redirect = true
+
+;------------;
+; TOPCENTER  ;
+;------------;
+
+[bar/TopCenter]
+line-size = 0
+line-color = 
+
+border-size = 0
+border-color = #00000000
+background = ${colors.background}
+
+;------------;
+; DIMENSIONS ;
+;------------;
+
+width = 10%
+height = 35
+offset-y = 0
+offset-x = 576
+;offset is 640 * (1 - 0.width) 
+
+border-top-size = 8
+border-bottom-size = 0
+border-right-size = 0
+border-left-size = 0
+
+;----------;
+; LOCATION ;
+;----------;
+
+bottom = false
+
+;-------;
+; FONTS ;
+;-------;
+
+font-0 = "SFNS Display:style=Regular:size=11:antialias=true;2"
+font-1 = "NotoSans Nerd Font:style=Regular:size=10;2"
+
+;---------------;
+; MISCELLANEOUS ;
+;---------------;
+
+radius = 6.0
 fixed-center = true
 padding-left = 2
 padding-right = 2
@@ -87,31 +142,132 @@ padding-right = 2
 module-margin-left = 0
 module-margin-right = 0
 
-modules-left = powermenu i3
-modules-center = xwindow
-modules-right = wlan eth date
+modules-center= time-date
 
 tray-position = none
 tray-padding =2 
-;tray-transparent = true
-;tray-background = #0063ff
 
-;wm-restack = bspwm
+wm-restack = i3
+override-redirect = true
+;------------;
+;  TOPRIGHT  ;
+;------------;
+
+[bar/TopRight]
+line-size = 0
+line-color = 
+
+border-size = 0
+border-color = #00000000
+
+override-redirect = true
+;------------;
+; DIMENSIONS ;
+;------------;
+
+width = 20%
+height = 35
+offset-y = 0
+offset-x = 1024
+;offset is 1280*(1-0.width)
+
+border-top-size = 8
+border-bottom-size = 0
+border-right-size = 8
+border-left-size = 0
+
+;----------;
+; LOCATION ;
+;----------;
+
+bottom = false
+
+;-------;
+; FONTS ;
+;-------;
+
+font-0 = "SFNS Display:style=Regular:size=12:antialias=true;2"
+font-1 = "NotoSans Nerd Font:style=Regular:size=11;2"
+
+;---------------;
+; MISCELLANEOUS ;
+;---------------;
+
+radius = 6.0
+fixed-center = false
+padding-left = 3
+padding-right = 2
+background = ${colors.background}
+
+module-margin-left = 2
+module-margin-right = 0
+
+modules-left = eth wlan
+modules-right = battery
+
+tray-position = none
+tray-padding =2 
+
 wm-restack = i3
 
-;override-redirect = true
+;------------;
+;  i3MENU    ;
+;------------;
 
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
+[bar/i3menu]
+line-size = 0
+line-color = 
 
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
+border-size = 0
+border-color = #00000000
 
-cursor-click = pointer
-cursor-scroll = ns-resize
+override-redirect = true
+;------------;
+; DIMENSIONS ;
+;------------;
+
+width = 20%
+height = 35
+offset-y = 0
+offset-x = 342.528
+;offset is 1280xtopLeftwidfth
+
+border-top-size = 8
+border-bottom-size = 0
+border-right-size = 0
+border-left-size = 0
+
+;----------;
+; LOCATION ;
+;----------;
+
+bottom = false
+
+;-------;
+; FONTS ;
+;-------;
+
+font-0 = "SFNS Display:style=Regular:size=12:antialias=true;2"
+font-1 = "NotoSans Nerd Font:style=Regular:size=11;3"
+
+;---------------;
+; MISCELLANEOUS ;
+;---------------;
+
+fixed-center = false
+padding-left = 2
+padding-right = 2
+background =
+
+module-margin-left = 2
+module-margin-right = 0
+
+modules-left = i3menu
+
+wm-restack = i3
 
 ;------------;
-; BOTBAR    ;
+;  BOTBAR    ;
 ;------------;
 
 [bar/PolybarBot]
@@ -126,7 +282,7 @@ border-color = #00000000
 ;------------;
 
 width = 100%
-height = 17
+height = 35
 offset-y = 0
 offset-x = 0
 
@@ -197,47 +353,47 @@ format-foreground = ${colors.foreground}
 [module/xwindow]
 type = internal/xwindow
 ;label = %title:0:30:...%
-format-foreground = ${colors.background}
+format-foreground = ${colors.foreground}
 label = %title%
 label-maxlen = 80
 label-empty =
 
 [module/i3]
 type = internal/i3
-format = <label-state> <label-mode>
+format = <label-state>
 index-sort = true
 wrapping-scroll = false
 
-ws-icon-0 = 1;: 
-ws-icon-1 = 2;: 
-ws-icon-2 = 3;: 
-ws-icon-3 = 4
-ws-icon-4 = 5
-ws-icon-5 = 6
-ws-icon-6 = 7
-ws-icon-7 = 8
-ws-icon-8 = 9
-ws-icon-9 = 10;: 
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;4
+ws-icon-4 = 5;5
+ws-icon-5 = 6;6
+ws-icon-6 = 7;7
+ws-icon-7 = 8;8
+ws-icon-8 = 9;9
+ws-icon-9 = 10;
 ;ws-icon-default = 
 
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 5
+label-mode-padding = 0
 label-mode-foreground = ${colors.primary}
 label-mode-background =
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%%icon%
+label-focused = %icon%
 label-focused-background = 
-label-focused-foreground = ${colors.background}
+label-focused-foreground = ${colors.foreground}
 ;label-focused-underline = ${colors.foreground}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%%icon%
+label-unfocused = %icon%
 label-unfocused-padding = 1
-label-unfocused-foreground = ${xrdb:color3}
+label-unfocused-foreground = ${colors.background-alt}
 ;label-unfocused-underline =
 
 ; visible = Active workspace on unfocused monitor
@@ -247,12 +403,19 @@ label-visible-background = ${self.label-focused-background}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%%icon%
-label-urgent-foreground = ${colors.foreground-alt}
+label-urgent = %icon%
+label-urgent-foreground = ${colors.alert}
 label-urgent-padding = 1
 
 ; Separator in between workspaces
 ; label-separator = |
+
+[module/i3menu]
+type = internal/i3
+format = <label-mode>
+
+label-mode-foreground = ${colors.alert}
+
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -288,53 +451,67 @@ card = nvidia_backlight
 [module/wlan]
 type = internal/network
 interface = wlp3s0
-interval = 3.0
+interval = 5.0
 
-format-connected-prefix = " "
+format-connected-prefix = "  "
 format-connected = <label-connected>
-format-connected-foreground = ${colors.background}
-;format-connected-underline = #9f78e1
+format-connected-foreground = ${colors.foreground}
 label-connected = %essid%
-;label-connected = %essid% %local_ip%
-label-connected-foreground = ${colors.background}
+label-connected-foreground = ${colors.foreground}
 
 format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
 interface = enp0s10
 interval = 5.0
 
-;format-connected-underline = #55aa55
-format-connected-prefix = ""
-format-connected-prefix-foreground = ${colors.primary_light}
-format-connected-foreground = ${colors.background}
-label-connected = %local_ip%
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground}
+format-connected-foreground = ${colors.foreground}
+label-connected = " "
 
 format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
-interval = 1
+interval = 300
 
-date = "%d/%m/%Y "
-
-time = %H:%M:%S
+date = "%d/%m/%Y"
 
 format-prefix = " "
-format-foreground = ${colors.background}
-format-prefix-foreground = ${colors.background}
-;format-underline = #0a6cf5
+format-foreground = ${colors.foreground}
+format-prefix-foreground = ${colors.foreground}
 
-label = %date%   %time%
+label = %date%
+
+[module/time]
+type = internal/date
+interval=1
+
+date =
+time = "%H:%M:%S"
+
+format-prefix = " "
+label = %time%
+
+format-foreground = ${colors.foreground}
+format-prefix-foreground = ${colors.foreground}
+
+
+[module/time-date]
+type = internal/date
+interval = 1
+
+date = " %H:%M:%S  "
+date-alt = " %d/%m/%y  "
+
+time = " " 
+time-alt =  " "
+label = %date% %time%
+
+format-date-foreground = ${colors.foreground}
+format-time-foreground = ${colors.background-alt}
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -419,7 +596,7 @@ type = custom/menu
 
 expand-right = true
 
-format-spacing = 3
+format-spacing = 1
 
 label-open = " "
 label-open-foreground = ${colors.foreground}
