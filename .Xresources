@@ -6,23 +6,54 @@ Xft.hinting: true
 Xft.antialias: true
 Xft.rgba: rgb
 
+alacritty.font:     pango:JetBrainsMono Nerd Font Mono:size=10:antialias=true
+! Base16 Material Darker
+! Scheme: Nate Peterson
 
-*.foreground:   #d7e3d3
-*.background:   #020202
-*.cursorColor:  #d7e3d3
-*.color0:       #030403
-*.color8:       #d08de0
-*.color1:       #121311
-*.color9:       #5f8baf
-*.color2:       #232522
-*.color10:      #58c7ba
-*.color3:       #3b3e3a
-*.color11:      #cf5fe3
-*.color4:       #595f57
-*.color12:      #ba69cb
-*.color5:       #7e857c
-*.color13:      #ec7693
-*.color6:       #a9b2a6
-*.color14:      #cf85de
-*.color7:       #dae6d6
-*.color15:      #4587b5
+#define base00 #2f2d2e
+#define base01 #303030
+#define base02 #353535
+#define base03 #4a4a4a
+#define base04 #b2ccd6
+#define base05 #eeffff
+#define base06 #eeffff
+#define base07 #ffffff
+#define base08 #f07178
+#define base09 #f78c6c
+#define base0A #ffcb6b
+#define base0B #c3e88d
+#define base0C #89ddff
+#define base0D #82aaff
+#define base0E #c792ea
+#define base0F #ff5370
+
+*foreground:   base05 //#eeffff
+*background:   base00 //#212121
+*cursorColor:  base05 //#eeffff
+
+*color0:       base00 //#212121
+*color1:       base08 //#f07178
+*color2:       base0B //#c3e88d
+*color3:       base0A //#ffcb6b
+*color4:       base0D //#82aaff
+*color5:       base0E //#c792ea
+*color6:       base0C //#89ddff
+*color7:       base05 //#eeffff
+
+*color8:       base03 //#4a4a4a
+*color9:       base08 //#f07178
+*color10:      base0B //#c3e88d
+*color11:      base0A //#ffcb6b
+*color12:      base0D //#82aaff
+*color13:      base0E //#c792ea
+*color14:      base0C //#89ddff
+*color15:      base07 //#ffffff
+
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+*color16:      base09 //#f78c6c
+*color17:      base0F //#ff5370
+*color18:      base01 //#303030
+*color19:      base02 //#353535
+*color20:      base04 //#b2ccd6
+*color21:      base06 //#eeffff
