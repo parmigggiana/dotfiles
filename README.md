@@ -1,4 +1,4 @@
-# basidot
+#
 
 ![Screenshot preview](https://github.com/parmigggiana/basidot/blob/master/Screenshot.png)
 
